@@ -1,16 +1,40 @@
 {
-  "mcpServers": {
-    "weather": {
-      "command": "uv",
-      "args": [
-        "--directory",
-        "./mock-weather-mcp-server",
-        "run",
-        "main.py"
-      ],
-      "env": {
-        "MCP_LOG_LEVEL": "ERROR"
-      }
+    "mcpServers": {
+        "halon-engine": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://sg01.dev.fyre.ibm.com/mae/mcp",
+                "--transport",
+                "http-first",
+                "--header",
+                "Content-Type: application/json",
+                "--header",
+                "Accept: application/json, text/event-stream",
+                "--header",
+                "Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWZkMWYwYy04NzZmLTRlOGYtYTk5OS1iOTAwMjBiYjcyODgiLCJpc3MiOiJoYWxvbl9hdXRoMF9qd3QiLCJzdWIiOiJqYWNrLmhvQGlibS5jb20iLCJpYXQiOjE3Njg4MzE2MzMsImV4cCI6MTc2OTQzNjQzM30.08_vVELdwngpPTELpu_yvo2YKE4QN4q2xxbPc2R0RKAzVXKyfvy5GlQywNsKqTLLr4yEKzkseepLV-b0s8G57g"
+            ],
+            "env": {
+                "NODE_EXTRA_CA_CERTS": "/Users/jackho/fullchain.pem"
+            }
+        },
+        "halon-tickets": {
+            "command": "npx",
+            "args": [
+                "mcp-remote",
+                "https://sg01.dev.fyre.ibm.com/ticket/mcp",
+                "--transport",
+                "http-first",
+                "--header",
+                "Content-Type: application/json",
+                "--header",
+                "Accept: application/json, text/event-stream",
+                "--header",
+                "Authorization: Bearer eyJhbGciOiJIUzUxMiIsInR5cCI6IkpXVCJ9.eyJqdGkiOiIyOWZkMWYwYy04NzZmLTRlOGYtYTk5OS1iOTAwMjBiYjcyODgiLCJpc3MiOiJoYWxvbl9hdXRoMF9qd3QiLCJzdWIiOiJqYWNrLmhvQGlibS5jb20iLCJpYXQiOjE3Njg4MzE2MzMsImV4cCI6MTc2OTQzNjQzM30.08_vVELdwngpPTELpu_yvo2YKE4QN4q2xxbPc2R0RKAzVXKyfvy5GlQywNsKqTLLr4yEKzkseepLV-b0s8G57g"
+            ],
+            "env": {
+                "NODE_EXTRA_CA_CERTS": "/Users/jackho/fullchain.pem"
+            }
+        }
     }
-  }
 }
